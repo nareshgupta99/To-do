@@ -31,6 +31,7 @@ const updatePassword = asyncErrorHandler(async (req, res) => {
 })
 
 const registerUser = asyncErrorHandler(async (req, res) => {
+    console.log("request recieved" ,req.body)
     const user = req.body;
     const hash = await encryptPassword(user.password);
     user.password = hash;

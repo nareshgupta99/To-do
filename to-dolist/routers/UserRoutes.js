@@ -8,10 +8,7 @@ const { updatePassword, registerUser, login,genratePasswordResetToken,resetPassw
 
 
 // to creating a user
-routes.post("/signup",()=>{
-    console.log("hello");
-    
-},registerUser);
+routes.post("/signup",registerUser);
 
 // login api
 routes.post("/login", login);

@@ -20,11 +20,11 @@ const CORSORIGIN=process.env.CORS;
 
 
 
-const corsOptions = {
-    origin: CORSORIGIN, // Replace with your client domain
-    origin:"*",
-    optionsSuccessStatus: 200 // Some legacy browsers choke on 204
-  };
+// const corsOptions = {
+//     // origin: CORSORIGIN, // Replace with your client domain
+//     origin:"*",
+//     optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+//   };
 
   
   
@@ -33,7 +33,9 @@ const corsOptions = {
   
   app.use(express.json())  // getting the data from client
   
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
+
 app.use("/api/v1/task",require("./routers/TaskRoutes"));
 app.use("/api/v1/user",require("./routers/UserRoutes"));
 
@@ -58,7 +60,7 @@ app.get("/hello",(req,res)=> res.send({
 }))
 
 
-app.listen(3333,LOCAL_IP,()=>{
+app.listen(PORT,LOCAL_IP,()=>{
     console.log(`Server running on ${PORT}`);
 })
 

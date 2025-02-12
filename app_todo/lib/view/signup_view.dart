@@ -1,3 +1,4 @@
+import 'package:app_todo/service/authentication_api.dart';
 import 'package:app_todo/view/login_view.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -130,7 +131,9 @@ class SignupView extends StatelessWidget {
             children: [
               Expanded(
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      AuthenticationApi.registeredUser(name: "Naresh", email: "nareshgupta170899@gmail.com",password: "naresh");
+                    },
                     style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))), backgroundColor: Colors.green, foregroundColor: Colors.white),
                     child: Text(
                       "Create Your Account",
